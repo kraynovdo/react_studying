@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+html, body, #root, .container {
+  height: 100%;
+}
+
+.content, .sidebar {
+  min-height: 100%;
+}  
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  box-sizing: border-box;
+  padding: 12px 24px;
+  width: 200px
+}
+
+.content {
+  box-sizing: border-box;
+  padding: 12px 24px;
+  flex-grow: 1;
+}
+
+.app-weekend {
+  color: red;
+}
