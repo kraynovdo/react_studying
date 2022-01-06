@@ -3,7 +3,7 @@ import SimpleComponent from '../components/SimpleComponent';
 
 const Home = () => {
     let today = new Date();
-    let isWeekend = today.getDay() == 6 || today.getDay() == 0
+    let isWeekend = today.getDay() === 6 || today.getDay() === 0
     return (
         <div className="home">
             <h1>HomePage</h1>
