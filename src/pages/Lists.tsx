@@ -1,3 +1,4 @@
+import React from 'react';
 import {getNews, INewsItem} from '../data/News'; 
 
 

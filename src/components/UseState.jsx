@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import {BracketsSolve2} from '../data/Brackets';
 

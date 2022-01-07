@@ -1,11 +1,14 @@
+import React from 'react';
+
 interface ISimpleFncProps {
-    outputvalue: string;
+    outputValue: string;
+    className?: string;
 }
 
 const SimpleOutput = (props: ISimpleFncProps) => {
     return (
         <> 
-            <div>Value = <b>{props.outputvalue}</b></div>
+            <div className={props.className}>Value = <b>{props.outputValue}</b></div>
         </>
     );    
 }

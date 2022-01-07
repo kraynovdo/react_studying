@@ -1,3 +1,4 @@
+import React from 'react';
 import SimpleFncComponent from '../components/SimpleFncComponent';
 import SimpleComponent from '../components/SimpleComponent';
 

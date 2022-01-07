@@ -31,17 +31,12 @@ class Ref extends React.Component<IRefProps, IRefState>{
     }
 
     scrollToEdge(): void {
-        if (this.state.scrolled) {
-            this.myRef.current && (this.myRef.current.scrollTop = 0);
-            this.setState({
-                scrolled: false
-            })
-        } else {
-            this.myRef.current && (this.myRef.current.scrollTop = 100);
-            this.setState({
-                scrolled: true
-            }) 
-        }
+        const targetScrollTop = this.state.scrolled ? 0 : 100;
+
+        this.myRef.current && (this.myRef.current.scrollTop = targetScrollTop);
+        this.setState({
+            scrolled: !this.state.scrolled
+        })
     }
 
     inputFocus(): void {
@@ -63,10 +58,10 @@ class Ref extends React.Component<IRefProps, IRefState>{
                     <SimpleButton caption="scroll" clickHandler={this.scrollToEdge}></SimpleButton>
 
                     <h2>Ref callback</h2>
-                        <input type="text" value="12345" ref={this.setTextInputRef}/>
-                        <div>
-                            <SimpleButton caption="focus" clickHandler={this.inputFocus}></SimpleButton>
-                        </div>
+                    <input type="text" value="12345" ref={this.setTextInputRef}/>
+                    <div>
+                        <SimpleButton caption="focus" clickHandler={this.inputFocus}></SimpleButton>
+                    </div>
                 </div>
             );    
         }

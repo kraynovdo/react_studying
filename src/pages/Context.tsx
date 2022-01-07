@@ -1,3 +1,4 @@
+import React from 'react';
 import SearchContext from "../data/SearchContext";
 import ContextComponent from "../components/ContextComponent";
 import { useState } from 'react';

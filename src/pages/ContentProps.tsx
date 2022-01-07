@@ -1,3 +1,4 @@
+import React from 'react';
 import {Wrapper} from '../components/Wrapper';
 import {DoubleWrapper} from '../components/Wrapper_double';
 const ContentProps = () => {

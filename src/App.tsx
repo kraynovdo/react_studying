@@ -12,7 +12,6 @@ import {nav} from './data/Navigation';
 
 
 function App() {
-    
     return (
       <BrowserRouter>
         <div className="container">

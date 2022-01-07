@@ -6,6 +6,7 @@ import { ContentProps } from '../pages/ContentProps';
 import { Lazy } from '../pages/Lazy';
 import { Context } from '../pages/Context';
 import { Ref } from '../pages/Ref';
+import { HOC } from '../pages/HOC';
 
 const nav = [
     {
@@ -55,6 +56,12 @@ const nav = [
         title: 'Ref',
         route: '/ref',
         element: <Ref/>
+    },
+    {
+        url: '/hoc',
+        title: 'HOC',
+        route: '/hoc',
+        element: <HOC/>
     }
 ]
 
