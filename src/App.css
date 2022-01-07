@@ -48,3 +48,17 @@ html, body, #root, .container {
 .red-color {
   color: red;
 }
+#modal-root > div {
+  position: absolute;
+  z-index: 10;
+  top: 90px;
+  left: 270px;
+  background: #fff;
+  border: #ccc;
+  box-shadow: 0 0 5px 1px #000;
+  width: 150px;
+  height: 100px;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}

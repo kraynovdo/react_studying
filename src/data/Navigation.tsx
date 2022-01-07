@@ -7,6 +7,7 @@ import { Lazy } from '../pages/Lazy';
 import { Context } from '../pages/Context';
 import { Ref } from '../pages/Ref';
 import { HOC } from '../pages/HOC';
+import { Portal } from '../pages/Portal';
 
 const nav = [
     {
@@ -62,6 +63,12 @@ const nav = [
         title: 'HOC',
         route: '/hoc',
         element: <HOC/>
+    },
+    {
+        url: '/portal',
+        title: 'Portal',
+        route: '/portal',
+        element: <Portal/>
     }
 ]
 
