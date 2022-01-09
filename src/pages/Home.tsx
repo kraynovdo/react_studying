@@ -2,10 +2,6 @@ import React from 'react';
 import SimpleFncComponent from '../components/SimpleFncComponent';
 import SimpleComponent from '../components/SimpleComponent';
 
-import startTest from '../data/MyPromiseTest';
-startTest();
-
-
 const Home = () => {
     let today = new Date();
     let isWeekend = today.getDay() === 6 || today.getDay() === 0
