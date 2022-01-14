@@ -113,21 +113,47 @@ const startFizzle = () => {
         return res;
     }
 
+    const MAX_PARALLEL = 3;
+
     function calculate_42(input, cb) {
-        let count = 0;
+        let executing = 0;
+        let stack = [];
+
+        let executed = 0;
         let res = 1;
 
         function fizzleCb (fizzleRes) {
-            count++;
+            executed++;
             res *= fizzleRes;
-            if (count === input) {
+            executing--;
+
+            stackCalc(stack);
+
+            if (executed === input) {
                 cb(res);
             }
         }
 
-        for (let i = 0; i < input; i++) {
-            fizzle_2(i, fizzleCb);
+        function stackCalc(stack) {
+            if (!stack.length) {
+                return;
+            }
+            if (executing < MAX_PARALLEL) {
+                fizzle_2(stack.shift(), fizzleCb);
+                stackCalc(stack);
+            }
         }
+
+        for (let i = 0; i < input; i++) {
+            if (i < MAX_PARALLEL) {
+                executing++;
+                fizzle_2(i, fizzleCb);
+            } else {
+                stack.push(i);
+            }
+        }
+
+        stackCalc(stack);
 
     }
 
