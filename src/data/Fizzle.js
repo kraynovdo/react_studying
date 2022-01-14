@@ -139,6 +139,7 @@ const startFizzle = () => {
                 return;
             }
             if (executing < MAX_PARALLEL) {
+                executing++;
                 fizzle_2(stack.shift(), fizzleCb);
             }
         }
