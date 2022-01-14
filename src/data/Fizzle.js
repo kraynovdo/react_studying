@@ -140,7 +140,6 @@ const startFizzle = () => {
             }
             if (executing < MAX_PARALLEL) {
                 fizzle_2(stack.shift(), fizzleCb);
-                stackCalc(stack);
             }
         }
 
@@ -152,9 +151,6 @@ const startFizzle = () => {
                 stack.push(i);
             }
         }
-
-        stackCalc(stack);
-
     }
 
     console.log(calculate_41(5));
