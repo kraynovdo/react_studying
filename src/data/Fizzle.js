@@ -140,6 +140,8 @@ const startFizzle = () => {
             })
         }
 
+        if (input <= 0) cb(res);
+
         for (let i = 0; i < input; i++) {
             if (i < MAX_PARALLEL) {
                 exec(i);
