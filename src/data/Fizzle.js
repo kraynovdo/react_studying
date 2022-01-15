@@ -1,5 +1,5 @@
 function fizzle(v) {
-    const res = v + 2;
+    const res = v - 2;
     console.log('fizzle ', res)
     return res;
 }
@@ -12,7 +12,7 @@ function boggle(v1, v2) {
 
 function fizzle_2(v, cb) {
     setTimeout(() => {
-        const res = v + 2;
+        const res = v - 2;
         console.log('fizzle2 ', res)
         cb(res)
     }, 700);
@@ -117,45 +117,40 @@ const startFizzle = () => {
 
     function calculate_42(input, cb) {
         let executing = 0;
-        let stack = [];
-
-        let executed = 0;
+        let queue = [];
         let res = 1;
 
-        function fizzleCb (fizzleRes) {
-            executed++;
-            res *= fizzleRes;
-            executing--;
-
-            stackCalc(stack);
-
-            if (executed === input) {
-                cb(res);
-            }
-        }
-
-        function stackCalc(stack) {
-            if (!stack.length) {
-                return;
-            }
-            if (executing < MAX_PARALLEL) {
-                executing++;
-                fizzle_2(stack.shift(), fizzleCb);
-            }
+        function exec(index) {
+            executing++;
+            fizzle_2(index, (fizzleRes) => {
+                executing--;
+                if (fizzleRes === 0) {
+                    cb(0);
+                    res = 0;
+                }
+                
+                if (res !== 0) {
+                    res *= fizzleRes;
+                    if (queue.length) {
+                        exec(queue.shift());
+                    } else if (!executing){
+                        cb(res);
+                    }
+                }
+            })
         }
 
         for (let i = 0; i < input; i++) {
             if (i < MAX_PARALLEL) {
-                executing++;
-                fizzle_2(i, fizzleCb);
+                exec(i);
             } else {
-                stack.push(i);
+                queue.push(i);
             }
         }
     }
 
-    console.log(calculate_41(5));
-    calculate_42(5, (res) => {console.log(res)});
+    console.log(calculate_41(7));
+    calculate_42(7, (res) => {console.log(res)});
 }
 
 export default startFizzle;
