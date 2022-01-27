@@ -129,4 +129,48 @@ let node = {
 let node = {name: 'server', port: 42};
 //endregion
 
-//Остановился на ES6
+//ALL FILE IS A FUNCTION
+(function($, chrome, console){
+
+code1();
+code2();
+
+})(jQuery, chrome, console);
+
+
+//region Arrow
+
+e.on('play', ()=>{
+    player.start();
+    started = 1;
+}
+
+socket.on('connect', ()=>state = 'CONNECTED');
+
+docs.forEach(doc=>add(doc));
+
+//endregion
+
+//region generators
+etask(function*(){
+
+});
+
+etask(function*get_request(){
+...
+});
+//endregion
+
+
+//region Classes
+class A {
+    prop(){
+        return etask(function*(){
+            code;
+        });
+    }
+}
+//endregion
+
+
+
