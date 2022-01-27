@@ -1,9 +1,9 @@
 import React from 'react';
 import SimpleFncComponent from '../components/SimpleFncComponent';
 import SimpleComponent from '../components/SimpleComponent';
-import startFizzle from "../data/Fizzle";
+import {StartGen} from "../data/Generator";
 
-startFizzle();
+StartGen();
 
 const Home = () => {
     let today = new Date();
